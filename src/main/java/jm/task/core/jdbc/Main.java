@@ -12,10 +12,10 @@ public class Main {
         userService.saveUser("Агрипина", "Кузнецова", (byte) 15);
 
         System.out.println("Список пользователей : " + userService.getAllUsers() + "\n" + "...........");
-        userService.removeUserById(2);
+        userService.removeUserById(1);
         System.out.println("Список пользователей : " + userService.getAllUsers() + "\n" + "...........");
         userService.cleanUsersTable();
-//      System.out.println("Список пользователей : " + userService.getAllUsers() + "\n" + "...........");
+        System.out.println("Список пользователей : " + userService.getAllUsers() + "\n" + "...........");
         userService.dropUsersTable();
     }
 }
