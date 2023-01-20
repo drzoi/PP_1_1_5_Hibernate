@@ -15,7 +15,7 @@ public class Main {
         userService.removeUserById(2);
         System.out.println("Список пользователей : " + userService.getAllUsers() + "\n" + "...........");
         userService.cleanUsersTable();
-        System.out.println("Список пользователей : " + userService.getAllUsers() + "\n" + "...........");
+//      System.out.println("Список пользователей : " + userService.getAllUsers() + "\n" + "...........");
         userService.dropUsersTable();
     }
 }

@@ -25,7 +25,7 @@ public class  UserDaoHibernateImpl implements UserDao {
                     "LASTNAME VARCHAR(100) NOT NULL, AGE INT NOT NULL, PRIMARY KEY (ID))").executeUpdate();
             transaction.commit();
         } catch (Exception e) {
-                transaction.rollback();
+            transaction.rollback();
         }
     }
 
@@ -36,7 +36,7 @@ public class  UserDaoHibernateImpl implements UserDao {
             session.createSQLQuery("DROP TABLE IF EXISTS userTable").executeUpdate();
             transaction.commit();
         }catch (Exception e) {
-                transaction.rollback();
+            transaction.rollback();
         }
     }
 
@@ -47,7 +47,7 @@ public class  UserDaoHibernateImpl implements UserDao {
             session.save(new User(name, lastName, age));
             transaction.commit();
         } catch (Exception e) {
-                transaction.rollback();
+            transaction.rollback();
         }
     }
 
@@ -58,7 +58,7 @@ public class  UserDaoHibernateImpl implements UserDao {
             session.delete(session.get(User.class, id));
             transaction.commit();
         } catch (Exception e) {
-                transaction.rollback();
+            transaction.rollback();
         }
     }
 
@@ -66,7 +66,7 @@ public class  UserDaoHibernateImpl implements UserDao {
     public List<User> getAllUsers() {
         List<User> userList = null;
         try (Session session = sessionFactory.openSession()) {
-            userList = session.createQuery("FROM User", User.class).getResultList();
+            userList = session.createQuery("FROM User ").getResultList();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -80,7 +80,7 @@ public class  UserDaoHibernateImpl implements UserDao {
             session.createQuery("DELETE User").executeUpdate();
             transaction.commit();
         }  catch (Exception e) {
-                transaction.rollback();
+            transaction.rollback();
         }
     }
 }
